@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 
 import Login from './pages/Login/Login';
 import Main from './pages/Main/Main';
+import State from './pages/State/State';
 
 class Routes extends React.Component {
   render() {
@@ -11,6 +12,7 @@ class Routes extends React.Component {
         <Switch>
           <Route exact path="/" component={Login} />
           <Route exact path="/main" component={Main} />
+          <Route exact path="/state" component={State} />
         </Switch>
       </Router>
     );
