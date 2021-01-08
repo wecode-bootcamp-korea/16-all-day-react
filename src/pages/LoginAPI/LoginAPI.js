@@ -43,6 +43,44 @@ class LoginAPI extends Component {
   };
 
   // 3) 버튼 클릭 시 Login API 통신 >>> success인 경우 (회원의 id, pw 값이 일치하는 경우) >>> main 페이지로 이동
+  handleLogin = () => {
+    const { idValue, pwValue } = this.state;
+    // 3-1) API 통신 >>> fetch 함수
+    fetch('API 주소', {
+      method: 'POST',
+      // method: 'GET'
+      body: JSON.stringify({
+        id: idValue,
+        pw: pwValue
+      })
+    })
+      // 3-2) Backend response 처리
+      .then(response => response.json())
+      .then(response => {
+        console.log('response >>> ', response);
+        // 3-3) reponse 메세지에 따른 로직 처리
+        if (response.message === 'valid user') {
+          localStorage.setItem('token', response.token);
+          alert('로그인에 성공하셨습니다.');
+          this.props.history.push('/main');
+        }
+
+        if (response.message === 'invalid id') {
+          alert('id를 확인해주세요.');
+        }
+
+        if (response.message === 'invalid pw') {
+          alert('pw를 확인해주세요.');
+        }
+
+        if (response.message === 'user not found') {
+          alert('회원 아님?');
+          this.props.history.push('/signup');
+        }
+      });
+
+    this.checkBtnState();
+  };
 
   render() {
     const { isBtnActive } = this.state;
@@ -57,6 +95,7 @@ class LoginAPI extends Component {
           className={
             isBtnActive ? 'loginBtn activeBtn' : 'loginBtn inactiveBtn'
           }
+          onClick={this.handleLogin}
         >
           로그인 버튼
         </button>
