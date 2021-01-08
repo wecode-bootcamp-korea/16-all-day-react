@@ -77,7 +77,11 @@ class State extends Component {
         </p> */}
 
         {/* cf. className 동적으로 변경 */}
-        <p className={this.state.trueFalseColor ? 'active' : 'inactive'}>
+        <p
+          className={
+            this.state.trueFalseColor ? 'tOrF active' : 'tOrF inactive'
+          }
+        >
           True or False
         </p>
 
