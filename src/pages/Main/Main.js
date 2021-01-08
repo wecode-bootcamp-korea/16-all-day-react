@@ -1,53 +1,28 @@
 import React, { Component } from 'react';
 import CommentList from './mainComponents/CommentList/CommentList';
+// default export vs. named export
+import { commentData } from './commentData';
 import './Main.scss';
 
 class Main extends Component {
   constructor() {
+    console.log('constructor 함수 실행');
     super();
     this.state = {
-      commentData: [
-        {
-          id: 1,
-          username: '1username',
-          content: '첫 번째 comment',
-          isLiked: false
-        },
-        {
-          id: 2,
-          username: '2username',
-          content: '두 번째 comment',
-          isLiked: false
-        },
-        {
-          id: 3,
-          username: '3username',
-          content: '세 번째 comment',
-          isLiked: false
-        },
-        {
-          id: 4,
-          username: '4username',
-          content: '네 번째 comment',
-          isLiked: false
-        },
-        {
-          id: 5,
-          username: '5username',
-          content: '다섯 번째 comment',
-          isLiked: false
-        },
-        {
-          id: 6,
-          username: '6username',
-          content: '여섯 번째 comment',
-          isLiked: false
-        }
-      ]
+      commentData: []
     };
   }
 
+  componentDidMount() {
+    console.log('componentDidMount 함수 실행');
+    this.setState({
+      commentData: commentData
+    });
+  }
+
   render() {
+    console.log('render 함수 실행');
+    console.log('this.state.commentData', this.state.commentData);
     return (
       <div className="main">
         <h1>Main Page</h1>

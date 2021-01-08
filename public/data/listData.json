@@ -1,0 +1,28 @@
+{
+  "data": [
+    {
+      "id": 1,
+      "productTitle": "6쪽마늘닭죽",
+      "price": 11000,
+      "isNew": true,
+      "isBest": true,
+      "imgSrc": "https://cdn.bonif.co.kr/cmdt/20201216_pVs_1608084675601_507Kb.jpg"
+    },
+    {
+      "id": 2,
+      "productTitle": "쇠고기 야채죽",
+      "price": 9000,
+      "isNew": false,
+      "isBest": true,
+      "imgSrc": "https://cdn.bonif.co.kr/cmdt/BF101_thum_10001798.jpg"
+    },
+    {
+      "id": 3,
+      "productTitle": "전복죽",
+      "price": 11000,
+      "isNew": false,
+      "isBest": true,
+      "imgSrc": "https://cdn.bonif.co.kr/cmdt/BF101_pic_ufLAl9wS.jpg"
+    }
+  ]
+}
